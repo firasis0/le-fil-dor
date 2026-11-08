@@ -1,0 +1,98 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+}
+
+.card {
+  @include card;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 400px);
+  padding: 32px 28px 26px;
+
+  h1 {
+    margin-top: 6px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+  }
+}
+
+.logo {
+  width: 96px;
+  margin: 0 auto;
+}
+
+.lead {
+  margin: 4px 0 22px;
+  text-align: center;
+  font-size: 14px;
+  color: $muted;
+}
+
+.field {
+  display: block;
+  margin-bottom: 14px;
+
+  > span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
+
+.control {
+  @include field;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 14px;
+
+  svg {
+    flex: none;
+    color: $wine-700;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-size: 15px;
+  }
+}
+
+.error {
+  margin-bottom: 12px;
+  font-size: 13.5px;
+  color: $danger;
+}
+
+.submit {
+  height: 50px;
+  margin-top: 6px;
+  border: 0;
+  border-radius: $radius-pill;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, $wine-600, $wine-800);
+  box-shadow: 0 12px 20px -12px rgba($wine-900, 0.9);
+
+  &:hover {
+    filter: brightness(1.08);
+  }
+}
+
+.back {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: $wine-700;
+}

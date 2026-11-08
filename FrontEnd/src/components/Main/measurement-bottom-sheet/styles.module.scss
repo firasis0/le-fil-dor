@@ -1,0 +1,136 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+  background: rgba($wine-900, 0.45);
+  backdrop-filter: blur(3px);
+  animation: fade 0.2s ease-out;
+}
+
+.sheet {
+  width: 100%;
+  padding: 10px 20px calc(22px + env(safe-area-inset-bottom));
+  border-radius: 28px 28px 0 0;
+  background: linear-gradient(180deg, #fffaf8, $paper);
+  box-shadow: $shadow-pop;
+  animation: rise 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.grabber {
+  display: block;
+  width: 44px;
+  height: 4px;
+  margin: 0 auto 16px;
+  border-radius: 4px;
+  background: $line-strong;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  h3 {
+    font-size: 19px;
+    font-weight: 800;
+  }
+  p {
+    font-size: 13px;
+    color: $muted;
+  }
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+  padding: 6px;
+  border-radius: 12px;
+  background: $wine-100;
+  color: $wine-700;
+}
+
+.entry {
+  direction: ltr; // − on the left, + on the right, like a number line
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 22px 0 20px;
+
+  > button {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid $line-strong;
+    background: #fff;
+    color: $wine-700;
+
+    &:active {
+      background: $wine-100;
+    }
+  }
+}
+
+.number {
+  @include field;
+  direction: ltr;
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  height: 64px;
+  padding: 0 14px;
+  align-items: center;
+
+  input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 32px;
+    font-weight: 800;
+    color: $ink;
+
+    &::placeholder {
+      color: #d6c5c0;
+    }
+  }
+
+  span {
+    color: $muted;
+    font-size: 15px;
+  }
+}
+
+.confirm {
+  width: 100%;
+  height: 52px;
+  border: 0;
+  border-radius: $radius-pill;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, $wine-600, $wine-800);
+  box-shadow: 0 12px 20px -12px rgba($wine-900, 0.9);
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}

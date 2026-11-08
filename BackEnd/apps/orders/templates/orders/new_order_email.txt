@@ -1,0 +1,16 @@
+طلب قفطان جديد {{ order.order_number }}
+
+الاسم: {{ order.full_name }}
+الهاتف: {{ order.phone }}
+الولاية: {{ order.wilaya.name }}
+البلدية: {{ order.commune.name }}
+
+المقاسات (سم):
+- محيط الصدر: {{ order.chest|floatformat:"-2u" }}
+- محيط الأرداف: {{ order.hips|floatformat:"-2u" }}
+- طول الكم: {{ order.sleeve_length|floatformat:"-2u" }}
+- طول القفطان: {{ order.garment_length|floatformat:"-2u" }}
+
+لوحة التحكم: {{ dashboard_url }}
+
+Powered by FeeQra

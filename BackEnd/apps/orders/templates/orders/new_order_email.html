@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>طلب جديد {{ order.order_number }}</title>
+</head>
+<body style="margin:0;padding:0;background:#efe3d6;font-family:Tahoma,Arial,sans-serif;color:#3b1a22;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#efe3d6;">
+<tr><td align="center" style="padding:24px 12px;">
+
+  <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:#fbf6ef;border-radius:6px;overflow:hidden;">
+
+    <!-- header: wine background + logo -->
+    <tr><td align="center" style="background:#5c1329;padding:28px 20px 22px;">
+      <img src="cid:logo" width="120" alt="Le Fil d'Or" style="display:block;border:0;margin:0 auto;">
+      <div style="height:1px;width:80px;background:#c9a24d;margin:18px auto 14px;line-height:1px;font-size:1px;">&nbsp;</div>
+      <div style="color:#f6e9dd;font-size:20px;font-weight:bold;">طلب قفطان جديد</div>
+      <div style="color:#c9a24d;font-size:14px;margin-top:6px;letter-spacing:1px;">{{ order.order_number }}</div>
+    </td></tr>
+
+    <!-- photo -->
+    {% if has_photo %}
+    <tr><td align="center" style="padding:24px 24px 0;">
+      <img src="cid:photo" alt="صورة النموذج" width="300" style="display:block;border:0;max-width:100%;height:auto;border-radius:4px;border:3px solid #c9a24d;">
+      <div style="font-size:12px;color:#8a6a62;margin-top:8px;">النموذج الذي اختارته الزبونة</div>
+    </td></tr>
+    {% endif %}
+
+    <!-- customer -->
+    <tr><td style="padding:24px 28px 0;">
+      <div style="font-size:13px;color:#a07d2c;font-weight:bold;letter-spacing:1px;margin-bottom:10px;">معلومات الزبونة</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #e3d2bf;">
+        <tr>
+          <td style="padding:11px 0;border-bottom:1px solid #e3d2bf;font-size:14px;color:#8a6a62;width:35%;">الاسم الكامل</td>
+          <td style="padding:11px 0;border-bottom:1px solid #e3d2bf;font-size:15px;font-weight:bold;">{{ order.full_name }}</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 0;border-bottom:1px solid #e3d2bf;font-size:14px;color:#8a6a62;">الهاتف</td>
+          <td style="padding:11px 0;border-bottom:1px solid #e3d2bf;font-size:15px;font-weight:bold;"><a href="tel:{{ order.phone }}" style="color:#5c1329;text-decoration:none;direction:ltr;unicode-bidi:embed;">{{ order.phone }}</a></td>
+        </tr>
+        <tr>
+          <td style="padding:11px 0;border-bottom:1px solid #e3d2bf;font-size:14px;color:#8a6a62;">الولاية</td>
+          <td style="padding:11px 0;border-bottom:1px solid #e3d2bf;font-size:15px;font-weight:bold;">{{ order.wilaya.name }}</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 0;border-bottom:1px solid #e3d2bf;font-size:14px;color:#8a6a62;">البلدية</td>
+          <td style="padding:11px 0;border-bottom:1px solid #e3d2bf;font-size:15px;font-weight:bold;">{{ order.commune.name }}</td>
+        </tr>
+      </table>
+    </td></tr>
+
+    <!-- measurements -->
+    <tr><td style="padding:24px 28px 0;">
+      <div style="font-size:13px;color:#a07d2c;font-weight:bold;letter-spacing:1px;margin-bottom:10px;">المقاسات (سم)</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="50%" style="padding:0 0 8px 4px;">
+            <div style="background:#5c1329;border-radius:4px;padding:14px 10px;text-align:center;">
+              <div style="color:#c9a24d;font-size:12px;">محيط الصدر</div>
+              <div style="color:#f6e9dd;font-size:24px;font-weight:bold;margin-top:4px;">{{ order.chest|floatformat:"-2u" }}</div>
+            </div>
+          </td>
+          <td width="50%" style="padding:0 4px 8px 0;">
+            <div style="background:#5c1329;border-radius:4px;padding:14px 10px;text-align:center;">
+              <div style="color:#c9a24d;font-size:12px;">محيط الأرداف</div>
+              <div style="color:#f6e9dd;font-size:24px;font-weight:bold;margin-top:4px;">{{ order.hips|floatformat:"-2u" }}</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="50%" style="padding:0 0 8px 4px;">
+            <div style="background:#5c1329;border-radius:4px;padding:14px 10px;text-align:center;">
+              <div style="color:#c9a24d;font-size:12px;">طول الكم</div>
+              <div style="color:#f6e9dd;font-size:24px;font-weight:bold;margin-top:4px;">{{ order.sleeve_length|floatformat:"-2u" }}</div>
+            </div>
+          </td>
+          <td width="50%" style="padding:0 4px 8px 0;">
+            <div style="background:#5c1329;border-radius:4px;padding:14px 10px;text-align:center;">
+              <div style="color:#c9a24d;font-size:12px;">طول القفطان</div>
+              <div style="color:#f6e9dd;font-size:24px;font-weight:bold;margin-top:4px;">{{ order.garment_length|floatformat:"-2u" }}</div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+
+    <!-- button -->
+    <tr><td align="center" style="padding:20px 28px 8px;">
+      <a href="{{ dashboard_url }}" style="display:inline-block;background:#c9a24d;color:#3b1a22;text-decoration:none;font-weight:bold;font-size:15px;padding:13px 34px;border-radius:3px;">فتح لوحة التحكم</a>
+    </td></tr>
+    <tr><td align="center" style="padding:6px 28px 24px;font-size:12px;color:#8a6a62;">
+      وصل الطلب في {{ sent_at|date:"j F Y — H:i" }}
+    </td></tr>
+
+    <!-- footer -->
+    <tr><td align="center" style="background:#5c1329;padding:16px;color:#c9a24d;font-size:12px;letter-spacing:1px;">
+      Le Fil d'Or &nbsp;·&nbsp; Powered by FeeQra
+    </td></tr>
+
+  </table>
+</td></tr>
+</table>
+</body>
+</html>

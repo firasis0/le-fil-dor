@@ -1,0 +1,37 @@
+.card {
+  @include card;
+  position: relative;
+  z-index: 1;
+  padding: clamp(16px, 3.6vw, 24px);
+  padding-bottom: clamp(12px, 3vw, 20px);
+}
+
+// The stage keeps the exact proportions of the current layout (set inline from
+// lib/measurements.js) so cards, leader lines and the model always line up.
+.stage {
+  position: relative;
+  container-type: inline-size;
+  margin-top: -34px; // tuck the figure's head up beside the heading, as in the design
+
+  @include below($bp-compact) {
+    margin-top: 6px;
+  }
+}
+
+.slot {
+  position: absolute;
+}
+
+.errors {
+  margin: 4px 0 0;
+  padding: 10px 14px;
+  list-style: none;
+  border-radius: 12px;
+  background: rgba($danger, 0.07);
+  font-size: 13px;
+  color: $danger;
+
+  li + li {
+    margin-top: 2px;
+  }
+}

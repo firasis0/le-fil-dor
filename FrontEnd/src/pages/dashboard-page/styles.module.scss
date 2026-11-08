@@ -1,0 +1,86 @@
+.page {
+  min-height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 22px;
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: 24px clamp(14px, 3vw, 28px) 48px;
+
+  // phones and small tablets: show either the list or the open order
+  @include below(900px) {
+    grid-template-columns: 1fr;
+
+    &.showDetails .list {
+      display: none;
+    }
+    &:not(.showDetails) .detail {
+      display: none;
+    }
+  }
+}
+
+.list {
+  align-self: start;
+}
+
+.hint {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  border-radius: $radius-card;
+  border: 1.5px dashed $line-strong;
+  color: $muted;
+}
+
+.empty {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 90px 20px;
+  text-align: center;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 800;
+  }
+  p {
+    max-width: 380px;
+    color: $muted;
+  }
+}
+
+.loading {
+  padding: 80px 20px;
+  text-align: center;
+  color: $muted;
+}
+
+// red banner: loading failed or an action (status / delete) failed
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: min(100% - 28px, 1180px);
+  margin: 18px auto 0;
+  padding: 10px 16px;
+  border-radius: 14px;
+  color: $danger;
+  background: rgba($danger, 0.09);
+  border: 1px solid rgba($danger, 0.25);
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: none;
+    border: 0;
+    background: none;
+    font-weight: 700;
+    color: inherit;
+  }
+}

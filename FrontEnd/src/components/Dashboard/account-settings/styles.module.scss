@@ -1,0 +1,92 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+
+  @include below(760px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  @include card;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 19px;
+    font-weight: 800;
+    color: $wine-800;
+  }
+}
+
+.hint {
+  margin-top: -8px;
+  font-size: 13.5px;
+  color: $muted;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $ink-soft;
+
+  input {
+    @include field;
+    height: 46px;
+    padding: 0 14px;
+    font-size: 15px;
+    outline: none;
+  }
+
+  small {
+    color: $danger;
+    font-size: 13px;
+  }
+}
+
+.error,
+.success {
+  padding: 9px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+.error {
+  color: $danger;
+  background: rgba($danger, 0.09);
+}
+.success {
+  color: $success;
+  background: rgba($success, 0.1);
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  margin-top: 4px;
+  border: 0;
+  border-radius: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, $wine-600, $wine-800);
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.1);
+  }
+  &:disabled {
+    opacity: 0.7;
+    cursor: progress;
+  }
+}

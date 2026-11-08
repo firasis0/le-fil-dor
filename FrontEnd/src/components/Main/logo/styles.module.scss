@@ -1,0 +1,21 @@
+.logo {
+  direction: ltr; // the page is RTL; the logo's text coordinates assume left-to-right
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.ink {
+  color: #171513;
+}
+
+.cream {
+  color: #f6e9dd;
+}
+
+.small {
+  font-family: $font-logo;
+  font-weight: 600;
+  font-size: 24px;
+}

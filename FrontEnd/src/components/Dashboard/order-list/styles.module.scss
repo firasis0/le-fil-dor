@@ -1,0 +1,90 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.6);
+  text-align: right;
+  transition: background 0.15s, border-color 0.15s;
+
+  &:hover {
+    background: #fff;
+  }
+
+  &.selected {
+    background: #fff;
+    border-color: $wine-500;
+    box-shadow: 0 0 0 3px rgba($wine-500, 0.12);
+  }
+}
+
+.thumb {
+  flex: none;
+  width: 58px;
+  height: 72px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #ddd5d2;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 1px;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 15.5px;
+}
+
+.new {
+  font-style: normal;
+  padding: 1px 8px;
+  border-radius: $radius-pill;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: $wine-600;
+}
+
+.place {
+  font-size: 13.5px;
+  color: $ink-soft;
+}
+
+.meta {
+  font-size: 12px;
+  color: $muted;
+}
+
+// small coloured label for orders that are no longer "new"
+.badge {
+  font-style: normal;
+  padding: 1px 8px;
+  border-radius: $radius-pill;
+  font-size: 11px;
+  font-weight: 700;
+  color: $ink-soft;
+  background: $paper-deep;
+}
+.contacted { color: #8a5a10; background: #f6e7c4; }
+.in_progress { color: #1f5f8a; background: #d9eaf6; }
+.completed { color: $success; background: #dcefe4; }
+.cancelled { color: $danger; background: #f6dde1; }

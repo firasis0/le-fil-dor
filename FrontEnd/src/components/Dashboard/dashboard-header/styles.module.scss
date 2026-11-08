@@ -1,0 +1,97 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px clamp(14px, 3vw, 28px);
+  background: linear-gradient(180deg, $wine-800, $wine-900);
+  color: #f6e9dd;
+  border-bottom: 2px solid $gold-500;
+}
+
+.logo {
+  width: 46px;
+  color: #f6e9dd;
+  flex: none;
+}
+
+.titles {
+  flex: 1;
+
+  h1 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  p {
+    font-size: 13px;
+    color: $gold-300;
+  }
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: inherit;
+  font-weight: 500;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 6px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  color: #e9d7cd;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.active {
+  color: $wine-900;
+  background: $gold-300;
+  font-weight: 700;
+
+  &:hover {
+    background: $gold-300;
+  }
+}
+
+// phones: icons only, so everything fits in one row
+@include below(640px) {
+  .header {
+    flex-wrap: wrap;
+  }
+  .titles {
+    flex-basis: 40%;
+  }
+  .link span,
+  .logout span {
+    display: none;
+  }
+  .link,
+  .logout {
+    width: 40px;
+    padding: 0;
+    justify-content: center;
+  }
+}

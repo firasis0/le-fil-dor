@@ -1,0 +1,29 @@
+// The whole site is Arabic (RTL). A few things must stay left-to-right:
+// digits, phone numbers and the brand wordmark.
+[dir="rtl"] {
+  text-align: right;
+}
+
+input[type="number"],
+input[type="tel"] {
+  direction: ltr;
+}
+
+// For Latin text, digits and phone numbers inside Arabic sentences.
+// `isolate` keeps the characters in their own left-to-right order.
+.ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+// hide the native number spinners — we draw our own
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

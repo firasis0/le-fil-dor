@@ -1,0 +1,22 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: clip; // decorations may bleed past the edge without creating a sideways scroll
+  display: flex;
+  flex-direction: column;
+}
+
+.column {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  width: min(100%, $column);
+  margin: 0 auto;
+  padding: 0 clamp(14px, 4vw, 20px);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 3.4vw, 20px);
+}

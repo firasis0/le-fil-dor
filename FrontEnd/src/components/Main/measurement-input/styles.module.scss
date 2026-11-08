@@ -1,0 +1,107 @@
+// Sizes use container-query units (cqw) so the card shrinks together with the illustration.
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.2cqw;
+  padding: 1.5cqw 1.7cqw 1.7cqw;
+  border-radius: 2.4cqw;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 0 #fff inset, 0 1.8cqw 3.6cqw -2cqw rgba($wine-800, 0.5), 0 1px 3px rgba($wine-800, 0.08);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &.active {
+    border-color: rgba($wine-500, 0.7);
+    box-shadow: 0 0 0 0.5cqw rgba($wine-500, 0.16), 0 2.4cqw 4cqw -2cqw rgba($wine-800, 0.55);
+  }
+
+  &.invalid {
+    border-color: $danger;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 1.1cqw;
+  font-weight: 800;
+  font-size: clamp(10.5px, 2.5cqw, 16px);
+  line-height: 1.2;
+  color: $ink;
+  white-space: nowrap;
+}
+
+.icon {
+  flex: none;
+  width: clamp(14px, 3.5cqw, 24px);
+  height: clamp(14px, 3.5cqw, 24px);
+  color: $wine-700;
+}
+
+.field {
+  @include field;
+  direction: ltr; // visual order: unit · number · stepper, same as the design
+  display: flex;
+  align-items: center;
+  height: 44%;
+  min-height: 0;
+  padding: 0 0.8cqw 0 1.6cqw;
+  border-radius: 1.8cqw;
+
+  input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    text-align: center;
+    line-height: 1.1;
+    font-family: $font-ar;
+    font-weight: 700;
+    font-size: clamp(12px, 3.1cqw, 20px);
+    color: $ink;
+
+    &::placeholder {
+      color: #c9b5af;
+      font-weight: 500;
+    }
+  }
+}
+
+.unit {
+  font-size: clamp(9.5px, 2.2cqw, 14px);
+  font-weight: 500;
+  color: $muted;
+}
+
+.stepper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+
+  button {
+    display: grid;
+    place-items: center;
+    width: clamp(14px, 2.9cqw, 20px);
+    height: clamp(9px, 2.1cqw, 14px);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: $wine-700;
+    border-radius: 3px;
+
+    &:hover {
+      background: $wine-100;
+    }
+  }
+}

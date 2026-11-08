@@ -1,0 +1,46 @@
+// ───────── Le Fil d'Or — design tokens ─────────
+
+// Colours (sampled from the approved design)
+$wine-900: #4d0f21;
+$wine-800: #5c1329;
+$wine-700: #721a35;
+$wine-600: #8a2744;
+$wine-500: #a23a58;
+$wine-100: #f1dde1;
+
+$gold-300: #e6cf9a;
+$gold-400: #d3b373;
+$gold-500: #c09a54;
+$gold-600: #a67f3a;
+
+$paper: #f8f0ed;
+$paper-deep: #f1e3de;
+$surface: rgba(255, 255, 255, 0.62);
+$field: #fcf5f3;
+$line: #ead9d4;
+$line-strong: #d9bfb8;
+
+$ink: #2b1c18;
+$ink-soft: #5a443e;
+$muted: #8f7770;
+$danger: #b3263f;
+$success: #2f7d57;
+
+// Type
+$font-ar: "Tajawal", "Segoe UI", Tahoma, sans-serif;
+$font-brand: "Cormorant Garamond", "Times New Roman", serif;
+$font-logo: "Jost", "Century Gothic", sans-serif;
+
+// Shape
+$radius-card: 24px;
+$radius-field: 14px;
+$radius-pill: 999px;
+
+// Depth — warm shadows, not grey
+$shadow-card: 0 1px 0 rgba(255, 255, 255, 0.9) inset,
+  0 18px 40px -22px rgba(114, 26, 53, 0.35), 0 2px 6px rgba(114, 26, 53, 0.06);
+$shadow-pop: 0 24px 60px -20px rgba(77, 15, 33, 0.55);
+
+// Layout
+$column: 640px;
+$bp-compact: 520px; // below this the measurement inputs become tap targets + bottom sheet

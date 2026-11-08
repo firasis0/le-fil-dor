@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: $font-ar;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $ink;
+  background: radial-gradient(
+      ellipse 90% 45% at 50% 0%,
+      #fffaf7 0%,
+      rgba(255, 250, 247, 0) 70%
+    ),
+    linear-gradient(180deg, $paper 0%, $paper-deep 100%);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: $wine-100;
+  color: $wine-800;
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
